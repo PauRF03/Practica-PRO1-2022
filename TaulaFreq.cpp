@@ -4,8 +4,8 @@ using namespace std;
 //Totes les Pre i Post esten escrites a l'arxiu "TaulaFreq.hpp"
 
 TaulaFreq::TaulaFreq(){
-	size=0;
-	vector<Entrada>v;
+	size = 0;
+	vector<Entrada> v;
 }
 
 int TaulaFreq::mida() const{
@@ -27,41 +27,22 @@ void TaulaFreq::modificarCodificacio(const int i, const string &codi){
 
 void TaulaFreq::construirTaula(string text){
 	for(int i=0; i<text.size(); ++i){
-		char c=text[i];
-		int n=0;
-		bool trobat=false;
-		for(int j=0;j<v.size() and not trobat;++j){
-			if(v[j].getSimbol()==c){
-				trobat=true;
-			}
-		}
+		char c = text[i];
+		int n = 0;
+		bool trobat = false;
+		for(int j=0;j<v.size() and not trobat;++j) if(v[j].getSimbol()==c) trobat=true;
 		if(not trobat){
-			for(int j=0;j<text.size();++j){
-				if(text[j]==c){
-					++n;
-				}
-			}
-			double fr=n/(double)text.size();
-			Entrada e(c,fr);
-			/*
-			if(e.getSimbol()=='a'){
-				e.setCodificacio("1");
-			}else if(e.getSimbol()=='b'){
-				e.setCodificacio("00");
-			}else{
-				e.setCodificacio("01");
-			}*/
+			for(int j = 0; j < text.size(); ++j) if(text[j]==c) ++n;
+			double fr = n/(double)text.size();
+			Entrada e(c, fr);
 			afegirEntrada(e);
 		}
 	}
 }
 
 void TaulaFreq::mostrarTaula() const{
-	cout<<" Bolcat taula frequencies ---->";
-	cout<<endl<<" Mida: "<<size<<" simbols"<<endl;
-	for(int i=0; i<v.size();++i){
-		cout<<"Entrada "<<i<<".";
-		cout<<v[i];
-	}
-	cout<<"----> Fi bolcat taula"<<endl;
+	cout << "Bolcat taula frequencies ---->\n";
+	cout << "Mida: " << size << " simbols\n\n";
+	for(int i=0; i<v.size();++i) cout << "Entrada " << i << "." << v[i];
+	cout << "\n----> Fi bolcat taula\n";
 }

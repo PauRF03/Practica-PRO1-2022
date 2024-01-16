@@ -8,7 +8,7 @@
 
 class Huffman {
 
-// Tipus de màdul: dades
+// Tipus de mòdul: dades
 // Descripció del tipus: Taula de codis de símbols obtinguts a partir de la
 //                       codificació Huffman. 
 
@@ -17,30 +17,31 @@ private:
     
 public:
     // Constructors
+
 	// Pre:  tf = TF
-    // Post: Crea una codificació Huffman buida a partir de la taula de freqüències
-    //       TF on només hi ha els símbols i la seva freqüència.
-    Huffman(const TaulaFreq &tf);
+	// Post: Crea una codificació Huffman buida a partir de la taula de freqüències
+    	//       TF on només hi ha els símbols i la seva freqüència.
+    	Huffman(const TaulaFreq &tf);
 	
-    // Consultors
+ 	// Consultors
 	
 	// Pre:
 	// Post: El resultat és la traducció del text d'entrada a un text
 	//       amb la codificació Huffman ((string de 0 i 1)
 	string codificar(const string &textE);
     
-    // Modificadors	
+    	// Modificadors	
 
 	// Pre:
-    // Post: Calcula la codificació Huffman (els codis de Huffman per cada símbol
-    //       segons la freqüència de cadascun d'ells).
-    void inserirCodis();
+    	// Post: Calcula la codificació Huffman (els codis de Huffman per cada símbol
+    	//       segons la freqüència de cadascun d'ells).
+    	void inserirCodis();
 	
 	//Pre:	L'arbre t conté tots els caràcters del text d'entrada, c és el caràcter a codificar, 
 	//		s la string que contindrà codificacio en codi binari i trobat indica true si ja s'ha
 	//		d'acabar de codificar
 	//Post:	s conté la codificació del caràcter c en codi binari 
-    void calcularCodi(const BinaryTree<Entrada> &t, const char c, string &s, bool &trobat);
+    	void calcularCodi(const BinaryTree<Entrada> &t, const char c, string &s, bool &trobat);
 
 	//Pre:	
 	//Post: Comprimeix la cua fins que tingui un sol element(l'arbre amb tots els caràcters

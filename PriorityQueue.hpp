@@ -173,4 +173,3 @@ istream &operator>>(istream &is, Queue<U> &q)
   }
   return is;
 }
-

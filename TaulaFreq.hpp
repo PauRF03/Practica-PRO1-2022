@@ -8,11 +8,11 @@ class TaulaFreq {
 // Tipus de mòdul: dades
 // Descripció del tipus: Taula de símbols i freqüències per la codificació Huffman.
 
-private:
+  private:
 	int size;
-    vector<Entrada> v;
+    	vector<Entrada> v;
 
-public:
+  public:
 
 	// Constructors
 	

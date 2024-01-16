@@ -29,13 +29,17 @@ private:
   void deleteChildren();
   
 public:
+  
   //constructors
+  
   /* Pre: true */
   /* Post: the result is a binary tree without any element */
   BinaryTree();
+  
   /* Pre: true */
   /* Post: the implicit parameter is a deep copy of the binary tree given as parameter */
   BinaryTree(const BinaryTree<T> &t);
+  
   /* Pre: true */
   /* Post: the implicit parameter is a binary tree with a copy of x as root and
      deep copies of left and right as direct subtrees */
@@ -46,9 +50,11 @@ public:
   ~BinaryTree();
 
   // modifiers
+  
   /* Pre: true */
   /* Post: the implicit parameter represents an empty tree */
   void makeEmpty();
+  
   /* Pre: true */
   /* Post: the implicit parameter is a deep copy of t, and is returned.  */
   BinaryTree<T>& operator=(const BinaryTree<T> &t);
@@ -57,18 +63,23 @@ public:
   /* Pre: the implicit parameter is not empty */
   /* Post: the result is a reference to the root of the implicit parameter */
   T& getRoot();
+  
   /* Pre: the implicit parameter is not empty */
   /* Post: the result is a reference to the root of the implicit parameter (constant version)*/
   const T& getRoot() const;
+  
   /* Pre: the implicit parameter is not empty */
   /* Post: the result is a reference to the left child of the implicit parameter */
   BinaryTree<T> &getLeft();
+  
   /* Pre: the implicit parameter is not empty */
   /* Post: the result is a reference to the left child of the implicit parameter (constant version)*/
   const BinaryTree<T> &getLeft() const;
+  
   /* Pre: the implicit parameter is not empty */
   /* Post: the result is a reference to the right child of the implicit parameter */
   BinaryTree<T> &getRight();
+  
   /* Pre: the implicit parameter is not empty */
   /* Post: the result is a reference to the right child of the implicit parameter (constant version)*/
   const BinaryTree<T> &getRight() const;
@@ -85,7 +96,9 @@ public:
   /*Pre: el valor de T ha de ser comparable amb l'operador == */
   /*Post: retorna true si el valor implicit és igual al valor de l'arrel de l'arbre t */
   bool operator==(const BinaryTree<T> &t) const;
+  
   // writing operator <<
+  
   /* Pre: true */
   /* Post: an intendedly pretty representation of a is written on os */
   template <class U> friend std::ostream& operator<<(std::ostream &os, const BinaryTree<U> &t);
