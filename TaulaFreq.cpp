@@ -13,7 +13,7 @@ int TaulaFreq::mida() const{
 }
 
 Entrada TaulaFreq::consultarCasella(const int &i) const{
-    return v[i];
+	return v[i];
 }
 
 void TaulaFreq::afegirEntrada(const Entrada &e){
@@ -26,15 +26,14 @@ void TaulaFreq::modificarCodificacio(const int i, const string &codi){
 }
 
 void TaulaFreq::construirTaula(string text){
-	for(int i=0; i<text.size(); ++i){
-		char c = text[i];
+	for(int i = 0; i < text.size(); ++i){
 		int n = 0;
 		bool trobat = false;
-		for(int j=0;j<v.size() and not trobat;++j) if(v[j].getSimbol()==c) trobat=true;
-		if(not trobat){
-			for(int j = 0; j < text.size(); ++j) if(text[j]==c) ++n;
+		for(int j = 0; !trobat && j < v.size(); ++j) if(v[j].getSimbol() == text[i]) trobat = true;
+		if(!trobat){
+			for(int j = 0; j < text.size(); ++j) if(text[j] == text[i]) ++n;
 			double fr = n/(double)text.size();
-			Entrada e(c, fr);
+			Entrada e(text[i], fr);
 			afegirEntrada(e);
 		}
 	}

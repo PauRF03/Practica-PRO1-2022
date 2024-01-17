@@ -8,9 +8,9 @@ Huffman::Huffman(const TaulaFreq &tf){
 }
 
 string Huffman::codificar(const string &textE){
-	string s;
+	string s = "";
 	for(int i = 0; i < textE.size(); i++){
-		string aux = "";
+		string aux;
 		bool trobat = false;
 		for(int j = 0; !trobat && j < t.mida(); ++j){
 			Entrada e = t.consultarCasella(j);
@@ -26,9 +26,9 @@ string Huffman::codificar(const string &textE){
 
 void Huffman::comprimirCua(Queue<BinaryTree<Entrada>> &cua){
 	if(cua.size() > 1){
-		BinaryTree<Entrada>esquerre = cua.front();
+		BinaryTree<Entrada> esquerre = cua.front();
 		cua.pop();
-		BinaryTree<Entrada>dreta = cua.front();
+		BinaryTree<Entrada> dreta = cua.front();
 		cua.pop();
 		double fresq = esquerre.getRoot().getFrequencia();
 		double frdre = dreta.getRoot().getFrequencia();

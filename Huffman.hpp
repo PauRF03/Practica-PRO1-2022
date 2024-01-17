@@ -12,11 +12,11 @@ class Huffman {
 // Descripció del tipus: Taula de codis de símbols obtinguts a partir de la
 //                       codificació Huffman. 
 
-private:	
+  private:	
 	TaulaFreq t;
     
-public:
-    // Constructors
+  public:
+    	// Constructors
 
 	// Pre:  tf = TF
 	// Post: Crea una codificació Huffman buida a partir de la taula de freqüències

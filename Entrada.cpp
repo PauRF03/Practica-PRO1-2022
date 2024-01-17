@@ -52,22 +52,13 @@ string Entrada::getCodificacio() const{
 }
 
 bool Entrada::operator<(const Entrada &e) const{
-	if(frequencia < e.frequencia){
-		return true;
-	}else{
-		return false;
-	}
+	return frequencia < e.frequencia;
 }
 
 bool Entrada::operator==(const Entrada &e) const{
-	if(frequencia == e.frequencia){
-		return true;
-	}else{
-		return false;
-	}
+	return frequencia == e.frequencia;
 }
 
 ostream& operator<<(ostream &os, const Entrada &e){
-	os << " Simbol: " << e.getSimbol() << ", Frequencia: " << e.getFrequencia() << ", Codificacio: " << e.getCodificacio() << "\n";
-	return os;
+	return os << " Simbol: " << e.getSimbol() << ", Frequencia: " << e.getFrequencia() << ", Codificacio: " << e.getCodificacio() << "\n";
 }

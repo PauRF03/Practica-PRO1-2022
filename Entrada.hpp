@@ -10,13 +10,13 @@ class Entrada{
 // Descripció del tipus: Conté un símbol a codificar, la seva freqüència d'aparició i
 //                       el seu codi de Huffman.
 	
-private:
+  private:
 
 	char nom;
 	double frequencia;
 	string codificacio;
 
-public:
+  public:
 	// Constructors
 	
 	// Pre: 
